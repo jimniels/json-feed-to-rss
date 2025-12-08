@@ -64,10 +64,12 @@ function itemRss(jsonFeedItem) {
     ? `      <title>${escapeXml(title)}</title>\n`
     : "";
   const linkElement = url ? `      <link>${url}</link>\n` : "";
-  const sourceElement = external_url ? `      <source url="${external_url}"></source>` : "";
+  const sourceElement = external_url
+    ? `      <source url="${external_url}"></source>\n`
+    : "";
 
   return `    <item>
-${dateElement}${titleElement}${linkElement}${guidElement}${descriptionElement}${contentElement}${sourceElement}    </item>
+${dateElement}${titleElement}${linkElement}${guidElement}${descriptionElement}${sourceElement}${contentElement}    </item>
 `;
 }
 
